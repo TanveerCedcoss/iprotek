@@ -1,0 +1,17 @@
+#! /bin/bash
+
+NAME="iprotek"
+path="$HOME/.$NAME"
+mkdir $path
+unzip iprotek.zip -d "$path"
+chomd -R a+rwx $path 
+
+echo "#!/usr/bin/env xdg-open
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.2
+Type=Application
+Terminal=false
+Exec=$path/brightness
+Name=I-ProTek
+Icon=$path/icon.png" > "$HOME/Desktop/iprotek.desktop"
